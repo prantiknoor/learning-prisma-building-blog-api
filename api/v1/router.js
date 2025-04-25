@@ -1,7 +1,9 @@
 import express from "express";
 import authenticate from "../../middlewares/authenticate.js";
+import isAbleToCommentOn from "../../middlewares/isAbleToCommentOn.js";
 import ownership from "../../middlewares/ownership.js";
 import { loginController, signUpController } from "./authController.js";
+import { createCommentController } from "./commentController.js";
 import { createPostController, getAllPostController, getPostWithCommentsController, updatePostController } from "./postController.js";
 import { getAllUserController, getUserWithPostsAndComments } from "./userController.js";
 
@@ -26,6 +28,13 @@ router.route('/api/v1/posts/:id')
     authenticate,
     ownership("Post"),
     updatePostController
-  )
+  );
+
+router.route('/api/v1/posts/:postId/comments')
+  .post(
+    authenticate,
+    isAbleToCommentOn,
+    createCommentController
+  );
 
 export default router;
