@@ -71,10 +71,10 @@ Here's what your models should roughly look like:
 - [x] Get a single user with all their posts and comments
 
 #### Posts
-- [ ] Create a new post by a user
-- [ ] Publish/unpublish a post
-- [ ] Get all posts (with optional filter for published)
-- [ ] Get a single post with all comments
+- [x] Create a new post by a user
+- [x] Publish/unpublish a post
+- [x] Get all posts (with optional filter for published)
+- [x] Get a single post with all comments
 
 #### Comments
 - [ ] Create a comment on a post
