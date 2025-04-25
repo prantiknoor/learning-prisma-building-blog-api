@@ -39,6 +39,7 @@ router.route('/api/v1/posts/:postId/comments')
   );
 router.delete('/api/v1/comments/:id',
   authenticate,
+  ownership("Comment"),
   deleteCommentController
 )
 
