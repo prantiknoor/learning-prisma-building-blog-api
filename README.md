@@ -77,17 +77,17 @@ Here's what your models should roughly look like:
 - [x] Get a single post with all comments
 
 #### Comments
-- [ ] Create a comment on a post
-- [ ] Get all comments on a post
+- [x] Create a comment on a post
+- [x] Get all comments on a post
 - [ ] Delete a comment
 
 ---
 
 ## 🚀 **Bonus Challenges**
-- Add JWT-based user authentication
-- Only allow users to edit/delete their own posts/comments
-- Add pagination to posts/comments
-- Add updatedAt timestamps and return posts/comments ordered by latest
+- [x] Add JWT-based user authentication
+- [] Only allow users to edit/delete their own posts/comments
+- [] Add pagination to posts/comments
+- [] Add updatedAt timestamps and return posts/comments ordered by latest
 
 ---
 

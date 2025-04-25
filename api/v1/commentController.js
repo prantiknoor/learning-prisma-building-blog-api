@@ -13,4 +13,11 @@ const createCommentController = async (req, res) => {
   res.status(201).json(comment);
 }
 
-export { createCommentController };
+const getAllCommentsOfPostController = async (req, res) => {
+  const comments = await prisma.comment.findMany({
+    where: { postId: req.params.postId }
+  });
+  res.status(200).json(comments);
+}
+
+export { createCommentController,  getAllCommentsOfPostController };

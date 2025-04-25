@@ -3,7 +3,7 @@ import authenticate from "../../middlewares/authenticate.js";
 import isAbleToCommentOn from "../../middlewares/isAbleToCommentOn.js";
 import ownership from "../../middlewares/ownership.js";
 import { loginController, signUpController } from "./authController.js";
-import { createCommentController } from "./commentController.js";
+import { createCommentController, getAllCommentsOfPostController } from "./commentController.js";
 import { createPostController, getAllPostController, getPostWithCommentsController, updatePostController } from "./postController.js";
 import { getAllUserController, getUserWithPostsAndComments } from "./userController.js";
 
@@ -31,6 +31,7 @@ router.route('/api/v1/posts/:id')
   );
 
 router.route('/api/v1/posts/:postId/comments')
+  .get(getAllCommentsOfPostController)
   .post(
     authenticate,
     isAbleToCommentOn,
