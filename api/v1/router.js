@@ -1,5 +1,6 @@
 import express from "express";
 import authenticate from "../../middlewares/authenticate.js";
+import ownership from "../../middlewares/ownership.js";
 import { loginController, signUpController } from "./authController.js";
 import { createPostController, getAllPostController, getPostWithCommentsController, updatePostController } from "./postController.js";
 import { getAllUserController, getUserWithPostsAndComments } from "./userController.js";
@@ -20,10 +21,10 @@ router.route('/api/v1/posts')
   );
 router.route('/api/v1/posts/:id')
   .get(
-    authenticate,
     getPostWithCommentsController
   ).patch(
     authenticate,
+    ownership("Post"),
     updatePostController
   )
 
