@@ -67,7 +67,7 @@ Here's what your models should roughly look like:
 
 #### Users
 - [x] Create a new user
-- [ ] Get all users
+- [x] Get all users
 - [ ] Get a single user with all their posts and comments
 
 #### Posts
