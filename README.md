@@ -36,6 +36,8 @@ Here's what your models should roughly look like:
 - `authorId` (String)
 - `author` (relation to `User`)
 - `comments` (relation to `Comment`)
+- `createdAt` (DateTime, @default(now()))
+- `updatedAt` (DateTime, @updatedAt)
 
 ### `Comment`
 - `id` (Int, @id, @default(autoincrement()))
@@ -44,6 +46,8 @@ Here's what your models should roughly look like:
 - `authorId` (String)
 - `post` (relation to `Post`)
 - `author` (relation to `User`)
+- `createdAt` (DateTime, @default(now()))
+- `updatedAt` (DateTime, @updatedAt)
 
 ---
 
