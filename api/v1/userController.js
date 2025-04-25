@@ -13,4 +13,20 @@ const getAllUserController = async (_req, res) => {
   res.status(200).json(users);
 }
 
-export { getAllUserController };
+const getUserWithPostsAndComments = async (req, res) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: req.params.id
+    },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      posts: true,
+      comments: true
+    }
+  });
+  res.status(200).json(user);
+}
+
+export { getAllUserController, getUserWithPostsAndComments };
