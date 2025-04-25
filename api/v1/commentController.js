@@ -16,7 +16,8 @@ const createCommentController = async (req, res) => {
 
 const getAllCommentsOfPostController = async (req, res) => {
   const comments = await prisma.comment.findMany({
-    where: { postId: req.params.postId }
+    where: { postId: req.params.postId },
+    orderBy: { updatedAt: "desc" }
   });
   res.status(200).json(comments);
 }

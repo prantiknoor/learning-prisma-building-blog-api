@@ -87,7 +87,7 @@ Here's what your models should roughly look like:
 - [x] Add JWT-based user authentication
 - [x] Only allow users to edit/delete their own posts/comments
 - [] Add pagination to posts/comments
-- [] Add updatedAt timestamps and return posts/comments ordered by latest
+- [x] Add updatedAt timestamps and return posts/comments ordered by latest
 
 ---
 

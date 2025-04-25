@@ -57,7 +57,9 @@ const getAllPostController = async (req, res) => {
     where: {
       authorId: req.query.authorId,
       published,
-    }
+    },
+    orderBy: { updatedAt: "desc" },
+
   });
   res.status(200).json(posts);
 }
