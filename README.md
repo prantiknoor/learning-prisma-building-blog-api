@@ -86,7 +86,7 @@ Here's what your models should roughly look like:
 ## 🚀 **Bonus Challenges**
 - [x] Add JWT-based user authentication
 - [x] Only allow users to edit/delete their own posts/comments
-- [] Add pagination to posts/comments
+- [ ] Add pagination to posts/comments
 - [x] Add updatedAt timestamps and return posts/comments ordered by latest
 
 ---
@@ -97,3 +97,7 @@ Here's what your models should roughly look like:
 - Query nested relations
 - Work with filters and conditions in Prisma queries
 - Learn Prisma Migrate and how to evolve your database
+
+## 🌐 **Postman Collection**
+You can use the following Postman link to test the API:  
+[Postman Collection](https://planetary-astronaut-69182.postman.co/workspace/My-Workspace~f3743a0e-fb88-4684-8f67-dc586dc8e546/collection/26737462-d8c8017e-f863-43c1-8f03-0f889703e1bd?action=share&creator=26737462&active-environment=26737462-eaeadd56-da55-4fb2-b72b-db5334c80411)
