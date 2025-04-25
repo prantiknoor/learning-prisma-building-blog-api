@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import HttpError from '../../utils/httpError.js';
 
 const prisma = new PrismaClient();
 
@@ -26,6 +27,8 @@ const getUserWithPostsAndComments = async (req, res) => {
       comments: true
     }
   });
+  if (!user) throw new HttpError(404, "No user was found");
+
   res.status(200).json(user);
 }
 
