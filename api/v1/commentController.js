@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import HttpError from "../../utils/httpError.js";
 
 const prisma = new PrismaClient();
 
@@ -20,4 +21,14 @@ const getAllCommentsOfPostController = async (req, res) => {
   res.status(200).json(comments);
 }
 
-export { createCommentController,  getAllCommentsOfPostController };
+const deleteCommentController = async (req, res) => {
+  const selector = { where: { id: +req.params.id || 0 } }
+  const comment = await prisma.comment.findUnique(selector);
+  if (!comment) throw new HttpError(404, "No comment was found.");
+
+  await prisma.comment.delete(selector);
+  res.status(200).json({ status: 200, message: "Comment deleted succeesfully " })
+}
+
+export { createCommentController, deleteCommentController, getAllCommentsOfPostController };
+

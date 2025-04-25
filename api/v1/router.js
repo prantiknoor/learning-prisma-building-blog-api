@@ -3,7 +3,7 @@ import authenticate from "../../middlewares/authenticate.js";
 import isAbleToCommentOn from "../../middlewares/isAbleToCommentOn.js";
 import ownership from "../../middlewares/ownership.js";
 import { loginController, signUpController } from "./authController.js";
-import { createCommentController, getAllCommentsOfPostController } from "./commentController.js";
+import { createCommentController, deleteCommentController, getAllCommentsOfPostController } from "./commentController.js";
 import { createPostController, getAllPostController, getPostWithCommentsController, updatePostController } from "./postController.js";
 import { getAllUserController, getUserWithPostsAndComments } from "./userController.js";
 
@@ -37,5 +37,9 @@ router.route('/api/v1/posts/:postId/comments')
     isAbleToCommentOn,
     createCommentController
   );
+router.delete('/api/v1/comments/:id',
+  authenticate,
+  deleteCommentController
+)
 
 export default router;
