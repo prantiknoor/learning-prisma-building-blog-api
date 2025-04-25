@@ -61,8 +61,12 @@ Here's what your models should roughly look like:
 
 ### ✅ CRUD Features
 
+#### Authentication
+- [x] Login
+- [x] Sign Up
+
 #### Users
-- [ ] Create a new user
+- [x] Create a new user
 - [ ] Get all users
 - [ ] Get a single user with all their posts and comments
 
