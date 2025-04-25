@@ -41,7 +41,7 @@ const getPostWithCommentsController = async (req, res) => {
     },
     include: {
       author: true,
-      comment: true
+      comments: true
     }
   });
   res.status(200).json(post);
